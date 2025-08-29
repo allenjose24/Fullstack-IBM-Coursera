@@ -38,3 +38,21 @@ function addTask() {
             alert("Please enter a valid task.");
         }
 }
+
+
+// Function to edit an existing task
+function editTask(span) {
+    // Prompt the user to enter a new task description
+    const newTask = prompt("Edit your task:", span.textContent);
+    
+    // Update the task only if the input is not null or empty
+    if (newTask !== null && newTask.trim() !== "") {
+        span.textContent = newTask.trim(); // Set the new task text
+    }
+}
+
+// Function to remove a task from the to-do list
+function removeTask(task){
+    const ul = document.getElementById("todoList"); // Get the list container
+    ul.removeChild(task); // Remove the specified task element
+}
